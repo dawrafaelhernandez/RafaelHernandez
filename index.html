@@ -13,8 +13,18 @@
 		margin: 0% !important;
 	}
 
+	video {
+		object-fit: cover;
+	}
+
+	.img-thumbnail:hover{
+		transform: scale(1.005);
+		border: 1px solid grey;
+	}
+
 	.container{
 		margin: 0 auto !important;
+		display: none;
 	}
 
 	.fix-size-48{
@@ -41,21 +51,43 @@
 		<div class="row ml-2 mr-2 mt-2">
 			<div class="col-6 col-md-4 m-md-1 d-inline-block">
 				<div class="row-fluid">
-					<img class="w-100 img-thumbnail img-rounded mt-3" src="source/img/programmer.jpg" alt="">
-					<img class="w-100 img-thumbnail img-rounded mt-3" src="source/img/creator.jpg" alt="">
+					<video class="w-100 img-thumbnail img-rounded mt-3 programmer box" poster="source/img/programmer.jpg" preload="true">
+						<source src="source/video/video.mp4" type="video/mp4">
+					</video>
+
+					<video class="w-100 img-thumbnail img-rounded mt-3 creator box" poster="source/img/creator.jpg" preload="true">
+						<source src="source/video/video.mp4" type="video/mp4">
+					</video>
 				</div>
 			</div>
 			<div class="col-5 ml-4 ml-md-0 col-md-3 m-1 d-inline-block">
-					<img class="w-100 h-100 img-thumbnail img-rounded" src="source/img/music.jpg" alt="">
+					<video class="w-100 h-100 img-thumbnail img-rounded music largeBox" poster="source/img/music.jpg" preload="true">
+						<source src="source/video/video.mp4" type="video/mp4">
+					</video>
 			</div>
 			<div class="col-12 col-md-4 m-1 d-inline-block">
 				<div class="row-fluid h-100">
-					<img class="w-100 img-thumbnail img-rounded mt-3 col-12" src="source/img/gamer.jpg" alt="">
-					<img class="fix-size-48 img-thumbnail img-rounded mt-3" src="source/img/driver.jpg" alt="">
-					<img class="fix-size-48 img-thumbnail img-rounded mt-3" src="source/img/designer.jpg" alt="">
-					<img class="fix-size-48 img-thumbnail img-rounded mt-3" src="source/img/explorer.jpg" alt="">
-					<img class="fix-size-48 img-thumbnail img-rounded mt-3" src="source/img/skate.jpg" alt="">
+					<video class="w-100 img-thumbnail img-rounded mt-3 col-12 gamer box" poster="source/img/gamer.jpg" preload="true">
+						<source src="source/video/video.mp4" type="video/mp4">
+					</video>
 
+
+					<video class="fix-size-48 img-thumbnail img-rounded mt-3 driver smallBox" poster="source/img/driver.jpg" preload="true">
+						<source src="source/video/video.mp4" type="video/mp4">
+					</video>
+
+					<video class="fix-size-48 img-thumbnail img-rounded mt-3 designer smallBox" poster="source/img/designer.jpg" preload="true">
+						<source src="source/video/video.mp4" type="video/mp4">
+					</video>
+
+
+					<video class="fix-size-48 img-thumbnail img-rounded mt-3 explorer smallBox" poster="source/img/explorer.jpg" preload="true">
+						<source src="source/video/video.mp4" type="video/mp4">
+					</video>
+
+					<video class="fix-size-48 img-thumbnail img-rounded mt-3 skate smallBox" poster="source/img/skate.jpg" preload="true">
+						<source src="source/video/video.mp4" type="video/mp4">
+					</video>
 				</div>
 			</div>
 		</div>
@@ -65,5 +97,45 @@
 
 	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$(".container").fadeIn("slow");
+			$(".programmer").css('visibility','visible').hide().fadeIn(1000);
+			$(".creator").css('visibility','visible').hide().delay(400).fadeIn(1000);
+			$(".music").css('visibility','visible').hide().delay(1500).fadeIn(1000);
+			$(".gamer").css('visibility','visible').hide().delay(800).fadeIn(1000);
+			$(".driver").css('visibility','visible').hide().delay(1200).fadeIn(1000);
+			$(".designer").css('visibility','visible').hide().delay(1300).fadeIn(1000);
+			$(".explorer").css('visibility','visible').hide().delay(1400).fadeIn(1000);
+			$(".skate").css('visibility','visible').hide().delay(1500).fadeIn(1000);
+
+
+			$(".box").height($(".box").width());
+
+			$(".smallBox").height($(".smallBox").width());
+
+			$(".largeBox").height($(".box").width());
+
+			$("video").click(function(){
+				let playing = false;
+				if (!this.paused) {
+					playing = true;
+				}
+				$("video").map(function() {
+					if (!this.paused) {
+						this.load();
+					}
+				});
+				if (playing) {
+					this.load();
+				}else{
+					this.play();
+				}
+				
+			});
+		});
+
+
+	</script>
 </body>
 </html>
