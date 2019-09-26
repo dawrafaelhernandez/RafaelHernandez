@@ -2,54 +2,68 @@
 <html>
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no">
 	<title>Rafael Hernández Jiménez</title>
 </head>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 <style type="text/css">
 	*{
-		margin: 0%;
-		padding: 0%;
-		font-family: Calibri;
+		font-family: libre baskerville;
+		padding: 0% !important;
+		margin: 0% !important;
 	}
 
-	body{
-		width: 80%;
-		margin: 0 auto;
-		display: block;
+	.container{
+		margin: 0 auto !important;
 	}
 
-	header{
-		display: block;
-		width: 100%;
-		text-align: center;
-		margin-top: 10vh;
+	.fix-size-48{
+		width: 48.8%;
 	}
 
-	#name{
-		font-size: 7vw;
-	}
-
-	.load{
-		width: 5%;
-		margin: 3vh auto;
-		display: block;
-		opacity: 0.7;
+	a{
+		color: black;
 	}
 </style>
 <body>
-	<header>
-		<h1 id="name">RAFAEL HERNÁNDEZ</h1>
-		<p>Web Developer</p>
-		<img class="load" src="source/animations/load/animationLoad.gif">
-	</header>
-	<article>
-		<section id=introduction>
-			<h2>Presentación:</h2>
-			<p>Programador Web con múltiples proyectos independientes con fines educativos. <br> Entusiasta de la creación e innovación, experimentado en tecnologías y lenguajes de programación tales como: Java, Javascript, Php, Phyton, twig...</p>
-		</section>
+	<div class="container">
+		<div class="mt-5 row text-center">
+			<h1 class="col-12" id="name">RAFAEL HERNÁNDEZ</h1>
+			<p class="col-12">Web Developer</p>
+		</div>
+
+		<div class="row text-center mt-2">
+			<a href="" class="col-4">Currículum</a>
+			<a href="" class="col-4">10 cosas sobre mi</a>
+			<a href="" class="col-4">Contactos</a>
+		</div>
+
+		<div class="row ml-2 mr-2 mt-2">
+			<div class="col-6 col-md-4 m-md-1 d-inline-block">
+				<div class="row-fluid">
+					<img class="w-100 img-thumbnail img-rounded mt-3" src="source/img/programmer.jpg" alt="">
+					<img class="w-100 img-thumbnail img-rounded mt-3" src="source/img/creator.jpg" alt="">
+				</div>
+			</div>
+			<div class="col-5 ml-4 ml-md-0 col-md-3 m-1 d-inline-block">
+					<img class="w-100 h-100 img-thumbnail img-rounded" src="source/img/music.jpg" alt="">
+			</div>
+			<div class="col-12 col-md-4 m-1 d-inline-block">
+				<div class="row-fluid h-100">
+					<img class="w-100 img-thumbnail img-rounded mt-3 col-12" src="source/img/gamer.jpg" alt="">
+					<img class="fix-size-48 img-thumbnail img-rounded mt-3" src="source/img/driver.jpg" alt="">
+					<img class="fix-size-48 img-thumbnail img-rounded mt-3" src="source/img/designer.jpg" alt="">
+					<img class="fix-size-48 img-thumbnail img-rounded mt-3" src="source/img/explorer.jpg" alt="">
+					<img class="fix-size-48 img-thumbnail img-rounded mt-3" src="source/img/skate.jpg" alt="">
+
+				</div>
+			</div>
+		</div>
+
+	</div>
 
 
-
-
-	</article>
+	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 </body>
 </html>
