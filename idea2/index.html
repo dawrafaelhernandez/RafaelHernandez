@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<title>Rafael Hernández Jiménez</title>
+</head>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+<style type="text/css">
+
+@media screen and (max-width:640px) {
+	.screenSettingNav{
+		display: none;
+	}
+}
+@media screen and (max-width:1024px) and (min-width:640px) {
+	.screenSettingNav{
+		display: none;
+	}
+
+}
+@media screen and (min-width:1024px) {
+	.screenSettingNav{
+		float: left;
+		width: 25%;
+	}
+
+	.screenSettinPanel{
+		float: right;
+		width: 75%;
+	}
+}	
+
+	*{
+		font-family: "libre baskerville", serif;
+		padding: 0% !important;
+		margin: 0% !important;
+	}
+	body{
+		display: none;
+	}
+	.mh-100{
+		min-height: 100vh;
+	}
+	.lateralNav {
+		position: absolute;
+		z-index: 1;
+		background-color: purple;
+	}
+	.welcome{
+		background-color: red;
+		position: initial;
+	}
+	.cat{
+		width: 30%;
+	}
+	.about{
+		background-color: yellow;
+	}
+	.cv{
+		background-color: green;
+	}
+	.recommendation{
+		background-color: blue;
+	}
+	.contact{
+		background-color: blue;
+	}
+</style>
+<body>
+	<div class="text-center mh-100 welcome">
+		<p>Web Developer</p>
+		<img class="cat" src="img/cat.png">
+		<h1 id="name">RAFAEL HERNÁNDEZ</h1>
+	</div>
+	<div class="lateralNav mh-100 screenSettingNav">
+		aaaaa
+	</div>
+	<div class="text-center mh-100 about screenSettingPanel">
+		<div class=""></div>
+	</div>
+	<div class="text-center mh-100 cv floatR">
+		<div class=""></div>
+	</div>
+	<div class="text-center mh-100 recommendation floatR">
+		<div class=""></div>
+	</div>
+	<div class="text-center mh-100 contact floatR">
+		<div class=""></div>
+	</div>
+	<div class="text-center mh-100 foot floatR">
+		<div class=""></div>
+	</div>
+	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("body").fadeIn("slow");
+		});
+		if ($(window).width() >= 1024) {
+			fixLateralNav();
+		}
+		$(window).resize(function(){
+			if ($(window).width() >= 1024) {
+				fixLateralNav();
+			}
+		});
+		function fixLateralNav(){
+			$(window).scroll(function() {
+				var fixmeTop = $(".welcome").height();
+			    var currentScroll = $(window).scrollTop();
+			    if (currentScroll >= fixmeTop) {
+			        $('.lateralNav').css({
+			            position: 'fixed',
+			            top: '0',
+			            left: '0'
+			        });
+			    }else{
+			        $('.lateralNav').css({
+			            position: 'static'
+			        });
+			    }
+			    switch (true) {
+				    case currentScroll >= fixmeTop * 3:
+				    		$('.lateralNav').css({
+					            "background-color": 'red'
+					        });
+				    break;
+				    case currentScroll >= fixmeTop * 2:
+				    		$('.lateralNav').css({
+					            "background-color": 'green'
+					        });
+				    break;     
+				    case currentScroll >= fixmeTop:
+				    		$('.lateralNav').css({
+					            "background-color": 'purple'
+					        });
+				    break;        
+				}
+			});
+		}
+	</script>
+</body>
+</html>
