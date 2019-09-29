@@ -22,12 +22,12 @@
 @media screen and (min-width:1024px) {
 	.screenSettingNav{
 		float: left;
-		width: 25%;
+		width: 49.99%;
 	}
 
 	.screenSettingPanel{
 		float: right;
-		width: 75%;
+		width: 50.01%;
 	}
 }	
 
@@ -90,6 +90,7 @@
 
 	.navbar{
 		font-size: 4vh;
+		padding: 0%;
 
 	}
 	.navbarBackground{
@@ -196,21 +197,26 @@
 			$(window).scroll(function() {
 				var fixmeTop = $(".welcome").height();
 			    var currentScroll = $(window).scrollTop();
-			    if (currentScroll >= fixmeTop) {
+			    if (currentScroll >= fixmeTop && currentScroll < fixmeTop * 4) {
 			        $('.lateralNav').css({
 			            position: 'fixed',
 			            top: '0',
 			            left: '0'
 			        });
-			    }else{
+			    }else if(currentScroll < fixmeTop){
 			        $('.lateralNav').css({
 			            position: 'relative'
 			        });
 			        $('.nav-link-about').css({
 			            "color": 'blue'
 			        });
+			    }else{
+					$('.lateralNav').css({
+			            "position": 'relative',
+			            "top": fixmeTop * 3
+			        });
 			    }
-			    if (currentScroll >= fixmeTop && currentScroll < fixmeTop * 2) {
+			    if (currentScroll >= fixmeTop * 0.9 && currentScroll < fixmeTop * 1.7) {
 			    	$('.nav-link-about').css({
 			            "color": 'red'
 			        });
@@ -223,10 +229,8 @@
 			        $('.nav-link-contact').css({
 			            "color": 'blue'
 			        });
-			        $('.navbarBackground').css({
-			            "background-image": 'url(img/about.png)'
-		        	});
-			    }else if (currentScroll >= fixmeTop * 2 && currentScroll < fixmeTop * 3) {
+			        
+			    }else if (currentScroll >= fixmeTop * 1.7 && currentScroll < fixmeTop * 2.7) {
 		    		$('.nav-link-cv').css({
 			            "color": 'red'
 			        });
@@ -239,10 +243,7 @@
 			        $('.nav-link-contact').css({
 			            "color": 'blue'
 			        });
-			        $('.navbarBackground').css({
-			            "background-image": 'url(img/cv.png)'
-			        });
-			    }else if(currentScroll >= fixmeTop * 3 && currentScroll < fixmeTop * 4){
+			    }else if(currentScroll >= fixmeTop * 2.7 && currentScroll < fixmeTop * 3.7){
 		    		$('.nav-link-cv').css({
 			            "color": 'blue'
 			        });
@@ -255,10 +256,7 @@
 			        $('.nav-link-about').css({
 			            "color": 'blue'
 			        });
-			        $('.navbarBackground').css({
-			            "background-image": 'url(img/recommendation.png)'
-			        });
-			    }else if(currentScroll >= fixmeTop * 4 && currentScroll < fixmeTop * 5){
+			    }else if(currentScroll >= fixmeTop * 3.7 && currentScroll < fixmeTop * 4.7){
 			    	$('.nav-link-contact').css({
 			            "color": 'red'
 			        });
@@ -268,22 +266,60 @@
 			        $('.nav-link-about').css({
 			            "color": 'blue'
 			        });
-			        $('.lateralNav').css({
-			            "position": 'relative',
-			            "top": fixmeTop * 3
-			        });
-			        $('.navbarBackground').css({
-			            "background-image": 'url(img/contact.png)'
-			        });
+			        
 			    }else if(currentScroll >= fixmeTop * 5 && currentScroll < fixmeTop * 6){
 			    	$('.nav-link-contact').css({
 			            "color": 'blue'
 			        });
-			        $('.lateralNav').css({
-			            "position": 'relative',
-			            "top": fixmeTop * 3
-			        });
 			    }
+
+
+			    if (currentScroll >= fixmeTop * 4.6 && currentScroll < fixmeTop * 5 && $('.navbarBackground').css("display") !== "none"){
+			    	$('.navbarBackground').fadeOut(200);
+			    }
+			    if (currentScroll >= fixmeTop * 1.6 && currentScroll < fixmeTop * 1.7 && $('.navbarBackground').css("display") !== "none"){
+			    	$('.navbarBackground').fadeOut(200);
+			    }
+				if (currentScroll >= fixmeTop * 2.6 && currentScroll < fixmeTop * 2.7 && $('.navbarBackground').css("display") !== "none"){
+			    	$('.navbarBackground').fadeOut(200);
+			    }
+				if (currentScroll >= fixmeTop * 3.6 && currentScroll < fixmeTop * 3.7 && $('.navbarBackground').css("display") !== "none"){
+			    	$('.navbarBackground').fadeOut(200);
+			    }
+
+			    
+
+			    $(window).scroll(function() {
+				    clearTimeout($.data(this, 'scrollTimer'));
+				    $.data(this, 'scrollTimer', setTimeout(function() {
+						if (currentScroll >= fixmeTop && currentScroll < fixmeTop * 1.5 && $('.navbarBackground').css("display") == "none"){
+							$('.navbarBackground').css({
+					            "background-image": 'url(img/about.png)'
+				        	});
+					    	$('.navbarBackground').fadeIn(300);
+					    }
+					    if (currentScroll >= fixmeTop * 1.9 && currentScroll < fixmeTop * 2.5 && $('.navbarBackground').css("display") == "none"){
+					    	$('.navbarBackground').css({
+					            "background-image": 'url(img/cv.png)'
+				        	});
+					    	$('.navbarBackground').fadeIn(300);
+					    }
+					    if (currentScroll >= fixmeTop * 2.9 && currentScroll < fixmeTop * 3.5 && $('.navbarBackground').css("display") == "none"){
+					    	$('.navbarBackground').css({
+					            "background-image": 'url(img/recommendation.png)'
+				        	});
+					    	$('.navbarBackground').fadeIn(300);
+					    }
+					    if (currentScroll >= fixmeTop * 3.9 && currentScroll < fixmeTop * 4.5 && $('.navbarBackground').css("display") == "none"){
+					    	$('.navbarBackground').css({
+					            "background-image": 'url(img/contact.png)'
+				        	});
+					    	$('.navbarBackground').fadeIn(300);
+					    }
+				    }, 100));
+				});
+
+
 			});
 
 
