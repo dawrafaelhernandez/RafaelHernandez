@@ -8,28 +8,15 @@
 <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 <style type="text/css">
 
-@media screen and (max-width:640px) {
-	.screenSettingNav{
-		display: none;
-	}
-}
-@media screen and (max-width:1024px) and (min-width:640px) {
-	.screenSettingNav{
-		display: none;
-	}
 
-}
-@media screen and (min-width:1024px) {
-	.screenSettingNav{
-		float: left;
-		width: 49.99%;
+	@keyframes slidein {
+	  from {
+	    margin-top: 100vh;
+	  }
+	  to {
+	    width: 100%;
+	  }
 	}
-
-	.screenSettingPanel{
-		float: right;
-		width: 50.01%;
-	}
-}	
 
 	*{
 		font-family: "libre baskerville", serif;
@@ -39,21 +26,16 @@
 
 	html{
 		scroll-behavior: smooth;
-	}
-	body{
 		display: none;
 	}
 	.mh-100{
 		min-height: 100vh;
 		height: 100%;
 	}
-	.lateralNav {
-		position: absolute;
-		z-index: 1;
-	}
-
 	.welcome{
-		position: initial;
+		background-color: black;
+		max-height: 100vh !important;
+		overflow: hidden;
 	}
 	.welcome p{
 		font-size: 2vh;
@@ -78,40 +60,9 @@
 		animation-duration: 2s;
 		animation-name: slidein;
 	}
-
-	@keyframes slidein {
-	  from {
-	    margin-top: 100vh;
-	  }
-	  to {
-	    width: 100%;
-	  }
-	}
-
-	.navbar{
-		font-size: 4vh;
-		padding: 0%;
-
-	}
-	.navbarBackground{
-		width: 100%;
-		height: 100vh;
-		position: absolute;
-		z-index: -1;
-		background-image: url("img/about.png");
-		background-position: center;
-		background-repeat: no-repeat;
-		background-size: cover;
-	}
-
-	.screenSettingPanel{
-		max-height: 100vh;
-	}
+	
 	.about{
-		background-color: yellow;
-	}
-	.cv{
-		background-color: green;
+		background-color: #f7484e;
 	}
 	.recommendation{
 		background-color: blue;
@@ -119,212 +70,96 @@
 	.contact{
 		background-color: red;
 	}
+
+	.text{
+		text-align: left;
+		padding: 10% 5%;
+		font-size: 1em;
+		background-color: white;
+		position: relative;
+		margin: 5% 10%;
+		height: 90vh;
+	}
+	.text h3{
+		margin-bottom: 1.6em;
+	}
 </style>
 <body>
-	<div class="text-center mh-100 welcome">
-		<p>Web Developer</p>
-		<div class="welcomeContent">
-			<img class="cat" src="img/cat.png">
-			<h1 id="name">RAFAEL HERNÁNDEZ</h1>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-12 text-center mh-100 welcome">
+				<p>Web Developer</p>
+				<div class="welcomeContent">
+					<img class="cat" src="img/cat.png">
+					<h1 id="name">RAFAEL HERNÁNDEZ</h1>
+				</div>
+				<ul class="nav justify-content-center">
+				  <li class="nav-item">
+				    <a class="nav-link nav-link-about active" href="#aboutLink">sobre mí</a>
+				  </li>
+				  <li class="nav-item">
+				    <a class="nav-link nav-link-cv" href="#cvLink">curriculum</a>
+				  </li>
+				  <li class="nav-item">
+				    <a class="nav-link nav-link-recommendation" href="#recommendationLink">recomendaciones</a>
+				  </li>
+				  <li class="nav-item">
+				    <a class="nav-link nav-link-contact" href="#contactLink">contacto</a>
+				  </li>
+				</ul>
+			</div>
 		</div>
-		<ul class="nav justify-content-center">
-		  <li class="nav-item">
-		    <a class="nav-link nav-link-about active" href="#aboutLink">sobre mí</a>
-		  </li>
-		  <li class="nav-item">
-		    <a class="nav-link nav-link-cv" href="#cvLink">curriculum</a>
-		  </li>
-		  <li class="nav-item">
-		    <a class="nav-link nav-link-recommendation" href="#recommendationLink">recomendaciones</a>
-		  </li>
-		  <li class="nav-item">
-		    <a class="nav-link nav-link-contact" href="#contactLink">contacto</a>
-		  </li>
-		</ul>
-	</div>
-	<div class="lateralNav mh-100 screenSettingNav">
-		
-		<nav class="navbar mh-100">
-			<div class="navbarBackground"></div>
-		  <ul class="navbar-nav">
-		    <li class="nav-item">
-		      <a class="nav-link-about" href="#aboutLink">sobre mí</a>
-		    </li>
-		    <li class="nav-item">
-		      <a class="nav-link-cv" href="#cvLink">curriculum</a>
-		    </li>
-		    <li class="nav-item">
-		      <a class="nav-link-recommendation" href="#recommendationLink">recomendaciones</a>
-		    </li>
-		    <li class="nav-item">
-		      <a class="nav-link-contact" href="#contactLink">contacto</a>
-		    </li>
-		  </ul>
-		</nav>
-	</div>
-	<div id="aboutLink" class="text-center mh-100 about screenSettingPanel">
-		<div class=""></div>
-	</div>
-	<div id="cvLink" class="text-center mh-100 cv screenSettingPanel">
-		<div class="">
+		<div id="aboutLink" class="row">
+			<div class="col-12 col-md-6 mh-100 about">
+				Sobre mí
+			</div>
+			<div class="col-12 col-md-6 mh-100">
+				<div class="text">
+				</div>
+			</div>
 		</div>
+
+		<div id="cvLink" class="row">
+			<div class="col-12 col-md-6 mh-100 cv">
+				Curriculum
+			</div>
+			<div class="col-12 col-md-6 mh-100">
+				<div class="text">
+				</div>
+			</div>
+		</div>
+
+		<div id="recommendationLink" class="row">
+			<div class="col-12 col-md-6 mh-100 recommendation">
+				Recomendaciones
+			</div>
+			<div class="col-12 col-md-6 mh-100">
+				<div class="text">
+				</div>
+			</div>
+		</div>
+
+		<div id="contactLink" class="row">
+			<div class="col-12 col-md-6 mh-100 contact">
+				Contacto
+			</div>
+			<div class="col-12 col-md-6 mh-100">
+				<div class="text">
+				</div>
+			</div>
+		</div>
+		<div class="col-12 mh-100 footer">
+			<div class=""></div>
+		</div>
+
 	</div>
-	<div id="recommendationLink" class="text-center mh-100 recommendation screenSettingPanel">
-		<div class=""></div>
-	</div>
-	<div id="contactLink" class="text-center mh-100 contact screenSettingPanel">
-		<div class=""></div>
-	</div>
-	<div class="text-center mh-100 foot screenSettingPanel">
-		<div class=""></div>
-	</div>
+
 	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function(){
-			$("body").fadeIn("slow");
+			$("html").fadeIn("slow");
 		});
-		if ($(window).width() >= 1024) {
-			fixLateralNav();
-		}
-
-		$(window).resize(function(){
-			if ($(window).width() >= 1024) {
-				fixLateralNav();
-			}
-		});
-		function fixLateralNav(){
-			$(window).scroll(function() {
-				var fixmeTop = $(".welcome").height();
-			    var currentScroll = $(window).scrollTop();
-			    if (currentScroll >= fixmeTop && currentScroll < fixmeTop * 4) {
-			        $('.lateralNav').css({
-			            position: 'fixed',
-			            top: '0',
-			            left: '0'
-			        });
-			    }else if(currentScroll < fixmeTop){
-			        $('.lateralNav').css({
-			            position: 'relative'
-			        });
-			        $('.nav-link-about').css({
-			            "color": 'blue'
-			        });
-			    }else{
-					$('.lateralNav').css({
-			            "position": 'relative',
-			            "top": fixmeTop * 3
-			        });
-			    }
-			    if (currentScroll >= fixmeTop * 0.9 && currentScroll < fixmeTop * 1.7) {
-			    	$('.nav-link-about').css({
-			            "color": 'red'
-			        });
-			        $('.nav-link-cv').css({
-			            "color": 'blue'
-			        });
-			        $('.nav-link-recommendation').css({
-			            "color": 'blue'
-			        });
-			        $('.nav-link-contact').css({
-			            "color": 'blue'
-			        });
-			        
-			    }else if (currentScroll >= fixmeTop * 1.7 && currentScroll < fixmeTop * 2.7) {
-		    		$('.nav-link-cv').css({
-			            "color": 'red'
-			        });
-			        $('.nav-link-about').css({
-			            "color": 'blue'
-			        });
-			        $('.nav-link-recommendation').css({
-			            "color": 'blue'
-			        });
-			        $('.nav-link-contact').css({
-			            "color": 'blue'
-			        });
-			    }else if(currentScroll >= fixmeTop * 2.7 && currentScroll < fixmeTop * 3.7){
-		    		$('.nav-link-cv').css({
-			            "color": 'blue'
-			        });
-			        $('.nav-link-recommendation').css({
-			            "color": 'red'
-			        });
-			        $('.nav-link-contact').css({
-			            "color": 'blue'
-			        });
-			        $('.nav-link-about').css({
-			            "color": 'blue'
-			        });
-			    }else if(currentScroll >= fixmeTop * 3.7 && currentScroll < fixmeTop * 4.7){
-			    	$('.nav-link-contact').css({
-			            "color": 'red'
-			        });
-			        $('.nav-link-recommendation').css({
-			            "color": 'blue'
-			        });
-			        $('.nav-link-about').css({
-			            "color": 'blue'
-			        });
-			        
-			    }else if(currentScroll >= fixmeTop * 5 && currentScroll < fixmeTop * 6){
-			    	$('.nav-link-contact').css({
-			            "color": 'blue'
-			        });
-			    }
-
-
-			    if (currentScroll >= fixmeTop * 4.6 && currentScroll < fixmeTop * 5 && $('.navbarBackground').css("display") !== "none"){
-			    	$('.navbarBackground').fadeOut(200);
-			    }
-			    if (currentScroll >= fixmeTop * 1.6 && currentScroll < fixmeTop * 1.7 && $('.navbarBackground').css("display") !== "none"){
-			    	$('.navbarBackground').fadeOut(200);
-			    }
-				if (currentScroll >= fixmeTop * 2.6 && currentScroll < fixmeTop * 2.7 && $('.navbarBackground').css("display") !== "none"){
-			    	$('.navbarBackground').fadeOut(200);
-			    }
-				if (currentScroll >= fixmeTop * 3.6 && currentScroll < fixmeTop * 3.7 && $('.navbarBackground').css("display") !== "none"){
-			    	$('.navbarBackground').fadeOut(200);
-			    }
-
-			    
-
-			    $(window).scroll(function() {
-				    clearTimeout($.data(this, 'scrollTimer'));
-				    $.data(this, 'scrollTimer', setTimeout(function() {
-						if (currentScroll >= fixmeTop && currentScroll < fixmeTop * 1.5 && $('.navbarBackground').css("display") == "none"){
-							$('.navbarBackground').css({
-					            "background-image": 'url(img/about.png)'
-				        	});
-					    	$('.navbarBackground').fadeIn(300);
-					    }
-					    if (currentScroll >= fixmeTop * 1.9 && currentScroll < fixmeTop * 2.5 && $('.navbarBackground').css("display") == "none"){
-					    	$('.navbarBackground').css({
-					            "background-image": 'url(img/cv.png)'
-				        	});
-					    	$('.navbarBackground').fadeIn(300);
-					    }
-					    if (currentScroll >= fixmeTop * 2.9 && currentScroll < fixmeTop * 3.5 && $('.navbarBackground').css("display") == "none"){
-					    	$('.navbarBackground').css({
-					            "background-image": 'url(img/recommendation.png)'
-				        	});
-					    	$('.navbarBackground').fadeIn(300);
-					    }
-					    if (currentScroll >= fixmeTop * 3.9 && currentScroll < fixmeTop * 4.5 && $('.navbarBackground').css("display") == "none"){
-					    	$('.navbarBackground').css({
-					            "background-image": 'url(img/contact.png)'
-				        	});
-					    	$('.navbarBackground').fadeIn(300);
-					    }
-				    }, 100));
-				});
-
-
-			});
-
-
-
-		}
 	</script>
 </body>
 </html>

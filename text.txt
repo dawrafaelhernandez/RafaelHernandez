@@ -1,0 +1,13 @@
+text
+			<h3>Desarrollador web de Vitoria-Gasteiz.</h3>
+			<p>Buscando la expresión máxima de creatividad sin límite, descubrí la programación, tomando como ejemplos artes programados como: videojuegos, páginas webs dinámicas e incluso la domótica.
+			Desatando en mí, una curiosidad solo limitada por el conocimiento.</p>
+
+			<h3>Aprendizaje y avance como pasión.</h3>
+			<p>La actitud de superación y lograr objetivos grandes, es la definición de mi persona.</p>
+			
+			<h3>El secreto está en la base.</h3>
+			<p>He borrado y corregido incontables líneas, obsesionado por la limpieza y completa optimización.</p>
+
+			<h3>Otras pasiones...</h3>
+			<p>Música. La mayor pasión de mi vida, compartiendo tiempo con la programación. <i>Siempre tengo puestos los cascos.</i></p>
