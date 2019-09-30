@@ -7,9 +7,11 @@
 </head>
 <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 <style type="text/css">
+.mh-100::-webkit-scrollbar { width: 0 !important }
+.mh-100 { overflow: -moz-scrollbars-none; }
+.mh-100 { -ms-overflow-style: none; }
 
-
-	@keyframes slidein {
+	@keyframes slideinBot {
 	  from {
 	    margin-top: 100vh;
 	  }
@@ -18,10 +20,17 @@
 	  }
 	}
 
+	@keyframes fadein {
+	  from {
+	    opacity: 0;
+	  }
+	  to {
+	    opacity: 1;
+	  }
+	}
+
 	*{
 		font-family: "libre baskerville", serif;
-		padding: 0%;
-		margin: 0%;
 	}
 
 	html{
@@ -30,7 +39,16 @@
 	}
 	.mh-100{
 		min-height: 100vh;
+		max-height: 100vh !important;
 		height: 100%;
+		overflow: scroll;
+	}
+	.verticalAling{
+		top: 45%;
+		left: 50%;
+		position: absolute;
+		-ms-transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%);
 	}
 	.welcome{
 		background-color: black;
@@ -39,13 +57,8 @@
 	}
 	.welcome p{
 		font-size: 2vh;
-	}
-	.welcomeContent{
-		top: 45%;
-		left: 50%;
-		position: absolute;
-		-ms-transform: translate(-50%, -50%);
-		transform: translate(-50%, -50%);
+		animation-duration: 5s;
+		animation-name: fadein;
 	}
 	.welcomeContent .cat{
 		width: 25%;
@@ -58,7 +71,7 @@
 		margin-top: 85vh;
 		font-size: 4vh;
 		animation-duration: 2s;
-		animation-name: slidein;
+		animation-name: slideinBot;
 	}
 	
 	.about{
@@ -73,15 +86,25 @@
 
 	.text{
 		text-align: left;
-		padding: 10% 5%;
-		font-size: 1em;
+		font-size: 2vh;
 		background-color: white;
 		position: relative;
-		margin: 5% 10%;
+		margin: 5% 10% 0% 10% ;
 		height: 90vh;
 	}
+	.img{
+		position: relative;
+		overflow: scroll;
+		height: 100vh;
+	}
 	.text h3{
-		margin-bottom: 1.6em;
+		font-size: 4vh;
+		margin-bottom: 0.5em;
+	}
+	.studyList{
+		margin-bottom: 6%;
+	}
+	.cvDownload{
 	}
 </style>
 <body>
@@ -89,7 +112,7 @@
 		<div class="row">
 			<div class="col-12 text-center mh-100 welcome">
 				<p>Web Developer</p>
-				<div class="welcomeContent">
+				<div class="welcomeContent verticalAling">
 					<img class="cat" src="img/cat.png">
 					<h1 id="name">RAFAEL HERNÁNDEZ</h1>
 				</div>
@@ -98,10 +121,7 @@
 				    <a class="nav-link nav-link-about active" href="#aboutLink">sobre mí</a>
 				  </li>
 				  <li class="nav-item">
-				    <a class="nav-link nav-link-cv" href="#cvLink">curriculum</a>
-				  </li>
-				  <li class="nav-item">
-				    <a class="nav-link nav-link-recommendation" href="#recommendationLink">recomendaciones</a>
+				    <a class="nav-link nav-link-cv" href="#projectLink">proyectos</a>
 				  </li>
 				  <li class="nav-item">
 				    <a class="nav-link nav-link-contact" href="#contactLink">contacto</a>
@@ -110,40 +130,67 @@
 			</div>
 		</div>
 		<div id="aboutLink" class="row">
-			<div class="col-12 col-md-6 mh-100 about">
-				Sobre mí
+			<div class="col-12 col-lg-6 mh-100 about">
+				<img class="col-4 verticalAling" src="img/about.png">
 			</div>
-			<div class="col-12 col-md-6 mh-100">
+			<div class="col-12 col-lg-6 mh-100">
 				<div class="text">
+					<h3>Desarrollador web de Vitoria-Gasteiz.</h3>
+					<p>Buscando la expresión de creatividad sin límite, descubrí la programación. Que desató en mí, una curiosidad solo limitada por el conocimiento que cada día aumenta.</p>
+
+					<h3>Estudios</h3>
+					<ul class="studyList">
+						<li>Desarrollador web.
+							<ul>
+								<li>Lenguajes de Programación: Java/JavaScript/Php </li>
+								<li>Lenguajes de Marcas: Xml/Html/Css</li>
+								<li>Librerías: Bootstrap/Twig/Scss/Richfaces </li>
+								<li>Bases de datos: Oracle/Mysql </li>
+								<li>Servidor de aplicaciones: Apache/Tomcat/WebLogic Server</li>
+								<li>Framework: Jbosseam/Gwt/</li>
+							</ul>
+						</li>
+						<br>
+						<li>Técnico en Sistemas Microinformáticos y Redes
+							<ul>
+								<li>Sistemas Operativos: Linux/Windows/Mac OS </li>
+								<li>Controlador de dominio Windows server</li>
+								<li>Servidores: Dns(Bind)/ Web(Apache)</li>
+								<li>Montaje y mantenimiento de equipos informáticos.</li>
+								<li>Conocimiento de comandos Linux.</li>
+							</ul>
+						</li>
+						<br>
+						<li>Técnico electricista en baja tensión
+							<ul>
+								<li>Montaje de cuadros eléctricos.</li>
+								<li>Estructura y distribución de cableado.</li>
+								<li>Medidas de seguridad.</li>
+								<li>Normas sobre instalación segura y legal.</li>
+							</ul>
+						</li>
+					</ul>
+					<a class="cvDownload" href="pdf/cvRafaelHernandez.pdf" target="_blank">Descargar Currículum</a>
 				</div>
 			</div>
 		</div>
 
-		<div id="cvLink" class="row">
-			<div class="col-12 col-md-6 mh-100 cv">
-				Curriculum
+		<div id="projectLink" class="row">
+			<div class="col-12 col-lg-6 mh-100 project">
+				<img class="col-4 verticalAling" src="img/project.png">
 			</div>
-			<div class="col-12 col-md-6 mh-100">
-				<div class="text">
-				</div>
-			</div>
-		</div>
-
-		<div id="recommendationLink" class="row">
-			<div class="col-12 col-md-6 mh-100 recommendation">
-				Recomendaciones
-			</div>
-			<div class="col-12 col-md-6 mh-100">
-				<div class="text">
+			<div class="col-12 col-lg-6 mh-100">
+				<div class="img">
+					
 				</div>
 			</div>
 		</div>
 
 		<div id="contactLink" class="row">
-			<div class="col-12 col-md-6 mh-100 contact">
-				Contacto
+			<div class="col-12 col-lg-6 mh-100 contact">
+				<img class="col-4 verticalAling" src="img/contact.png">
 			</div>
-			<div class="col-12 col-md-6 mh-100">
+			<div class="col-12 col-lg-6 mh-100">
 				<div class="text">
 				</div>
 			</div>
