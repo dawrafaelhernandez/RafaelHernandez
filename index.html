@@ -41,7 +41,6 @@
 		min-height: 100vh;
 		max-height: 100vh !important;
 		height: 100%;
-		overflow: scroll;
 	}
 	.verticalAling{
 		top: 45%;
@@ -51,7 +50,6 @@
 		transform: translate(-50%, -50%);
 	}
 	.welcome{
-		background-color: black;
 		max-height: 100vh !important;
 		overflow: hidden;
 	}
@@ -77,11 +75,14 @@
 	.about{
 		background-color: #f7484e;
 	}
-	.recommendation{
-		background-color: blue;
+	.exprience{
+		background-color: #7BCFCC;
 	}
 	.contact{
-		background-color: red;
+		background-color: #5A6161;
+	}
+	.footer{
+		background-color: grey;
 	}
 
 	.text{
@@ -93,9 +94,10 @@
 		height: 90vh;
 	}
 	.img{
-		position: relative;
-		overflow: scroll;
 		height: 100vh;
+		width: 100%;
+		padding: 0% !important;
+		margin: 0% !important;
 	}
 	.text h3{
 		font-size: 4vh;
@@ -105,6 +107,11 @@
 		margin-bottom: 6%;
 	}
 	.cvDownload{
+	}
+
+	.padding0{
+		padding: 0% !important;
+		margin: 0% !important;
 	}
 </style>
 <body>
@@ -121,7 +128,7 @@
 				    <a class="nav-link nav-link-about active" href="#aboutLink">sobre mí</a>
 				  </li>
 				  <li class="nav-item">
-				    <a class="nav-link nav-link-cv" href="#projectLink">proyectos</a>
+				    <a class="nav-link nav-link-cv" href="#experienceLink">experiencia</a>
 				  </li>
 				  <li class="nav-item">
 				    <a class="nav-link nav-link-contact" href="#contactLink">contacto</a>
@@ -133,10 +140,10 @@
 			<div class="col-12 col-lg-6 mh-100 about">
 				<img class="col-4 verticalAling" src="img/about.png">
 			</div>
-			<div class="col-12 col-lg-6 mh-100">
+			<div class="col-12 col-lg-6 mh-100 info">
 				<div class="text">
 					<h3>Desarrollador web de Vitoria-Gasteiz.</h3>
-					<p>Buscando la expresión de creatividad sin límite, descubrí la programación. Que desató en mí, una curiosidad solo limitada por el conocimiento que cada día aumenta.</p>
+					<p>Buscando la expresión de creatividad sin límite, descubrí la programación. Que desató en mí, una curiosidad solo limitada por el conocimiento que cada día crece.</p>
 
 					<h3>Estudios</h3>
 					<ul class="studyList">
@@ -175,14 +182,42 @@
 			</div>
 		</div>
 
-		<div id="projectLink" class="row">
-			<div class="col-12 col-lg-6 mh-100 project">
-				<img class="col-4 verticalAling" src="img/project.png">
-			</div>
-			<div class="col-12 col-lg-6 mh-100">
-				<div class="img">
-					
+		<div id="experienceLink" class="row">
+			<div class="col-12 col-lg-6 mh-100 project order-2 order-lg-1 info">
+				<div class="text">
+					<ul>
+						<h3>Altia</h3>
+						<li>Desarrollador web.</li>
+						<li>Utilizando:
+							<ul>
+								<li>Weblogic, Tomcat, Mysql, J2EE, GWT, Jbosseam</li>
+							</ul>
+						</li>
+						<li>Ver carta de recomentación.</li>
+						<br>
+						<h3>Análisis y Simulación</h3>
+						<li>Técnico de sistemas.</li>
+						<li>Realizando:
+							<ul>
+								<li>Mantenimiento de Servidor y datos, Eset, Maquetación, Montaje, Licencias</li>
+							</ul>
+						</li>
+						<li>Ver carta de recomentación.</li>
+						<br>
+						<h3>Electrotécnica Alavesas Aldakin</h3>
+						<li>Técnico electricista.</li>
+						<li>Realizando:
+							<ul>
+								<li>Instalación en vivienda, Almacen, Montaje de cuadros eléctricos</li>
+							</ul>
+						</li>
+						<li>Ver carta de recomentación.</li>
+					</ul>
+					<a class="cvDownload" href="pdf/cvRafaelHernandez.pdf" target="_blank">Descargar Currículum</a>
 				</div>
+			</div>
+			<div class="col-12 col-lg-6 mh-100 exprience order-1 order-lg-2">
+				<img class="col-4 verticalAling" src="img/experience.png">
 			</div>
 		</div>
 
@@ -190,8 +225,14 @@
 			<div class="col-12 col-lg-6 mh-100 contact">
 				<img class="col-4 verticalAling" src="img/contact.png">
 			</div>
-			<div class="col-12 col-lg-6 mh-100">
+			<div class="col-12 col-lg-6 mh-100 info">
 				<div class="text">
+					<h3>No dude en contactar.</h3>
+					<p>Displonible a cualquier horario.</p>
+					<h3>Rafael Hernández</h3>
+					<p>Desarrollador web.</p>
+					<p>daw.rafael.hernandez@gmail.com</p>
+					<p>688664176</p>
 				</div>
 			</div>
 		</div>
@@ -204,8 +245,35 @@
 	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<script type="text/javascript">
+
+
+
+		
+
+
+		
 		$(document).ready(function(){
 			$("html").fadeIn("slow");
+			$(".mh-100").each(function() {
+				$(window).scroll(function(e){
+					$(".info").css("overflow", "hidden");
+					clearTimeout($.data(this, 'scrollTimer'));
+			   		$.data(this, 'scrollTimer', setTimeout(function() {
+						$(".mh-100").each(function() {
+					   		if ($(window).scrollTop() >= $(this)[0].offsetTop - $(this).height() * 15 / 100 &&
+					        	$(window).scrollTop() < $(this)[0].offsetTop + $(this).height() * 15 / 100
+					        	) {
+								window.scrollTo(0, $(this)[0].offsetTop);
+							}
+							if ($(window).scrollTop() == $(this)[0].offsetTop) {
+								$(".info").css("overflow", "scroll");
+							}
+						});
+		 			}, 150));
+		 		});
+
+					
+			});
 		});
 	</script>
 </body>
