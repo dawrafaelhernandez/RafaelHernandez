@@ -1,0 +1,16 @@
+$(window).scroll(function(e){
+					$(".info").css("overflow", "hidden");
+					clearTimeout($.data(this, 'scrollTimer'));
+			   		$.data(this, 'scrollTimer', setTimeout(function() {
+						$(".mh-100").each(function() {
+					   		if ($(window).scrollTop() >= $(this)[0].offsetTop - $(this).height() * 15 / 100 &&
+					        	$(window).scrollTop() < $(this)[0].offsetTop + $(this).height() * 15 / 100
+					        	) {
+								window.scrollTo(0, $(this)[0].offsetTop);
+							}
+							if ($(window).scrollTop() == $(this)[0].offsetTop) {
+								$(".info").css("overflow", "scroll");
+							}
+						});
+		 			}, 150));
+		 		});
