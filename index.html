@@ -16,7 +16,6 @@
 	    margin-top: 100vh;
 	  }
 	  to {
-	    width: 100%;
 	  }
 	}
 
@@ -71,18 +70,51 @@
 		color: white;
 	}
 
-	.welcome ul {
+	.welcome .navbar {
 		margin-top: 85vh;
 		font-size: 4vh;
 		animation-duration: 2s;
 		animation-name: slideinBot;
+		justify-content: center;
+	}
+
+	.welcome .navbar div {
+  		justify-content: center;
+	}
+
+	.welcome .navbar button{
+		position: fixed;
+		z-index: 2;
 	}
 
 	.welcome ul li a{
 		font-family: Proxima Nova Regular,serif;
 		color: #f7484e;
 	}
-	
+
+	.menu{
+		text-align: center;
+		width: 100vw;
+		height: 100vh;
+		margin-left: -2vh;
+		background-color: #292929;
+		position: fixed;
+		top: 0;
+		display: none;
+		z-index: 3;
+	}
+
+	.menu a{
+		font-family: Proxima Nova Regular,serif;
+		color: #f7484e;
+		font-size: 6vh;
+		width: 100%;
+		display: block;
+	}
+	.menu button{
+		font-size: 4vh;
+		color: white;
+	}
 	.about{
 		background-color: #f7484e;
 	}
@@ -100,8 +132,8 @@
 		text-align: left;
 		background-color: white;
 		position: relative;
-		margin: 5% 10% 0% 10% ;
-		height: 90vh;
+		margin: 8% 5% 0% 5% ;
+		max-height: 90vh;
 	}
 	.text *{
  		font-family: Arial,serif;
@@ -130,7 +162,7 @@
 	}
 
 	.info{
-		overflow: hidden;
+		overflow: scroll;
 	}
 </style>
 <body>
@@ -143,17 +175,32 @@
 					<img class="cat" src="img/cat.png">
 					<h1 id="name">RAFAEL HERNÁNDEZ</h1>
 				</div>
-				<ul class="nav justify-content-center">
-				  <li class="nav-item">
-				    <a class="nav-link nav-link-about active" href="#aboutLink">sobre mí</a>
-				  </li>
-				  <li class="nav-item">
-				    <a class="nav-link nav-link-cv" href="#experienceLink">experiencia</a>
-				  </li>
-				  <li class="nav-item">
-				    <a class="nav-link nav-link-contact" href="#contactLink">contacto</a>
-				  </li>
-				</ul>
+				<div class="menu">
+					<button class="navbar-toggler buttonMenuClose" type="button">close</button>
+					<div class="verticalAling">
+						<a href="#aboutLink">sobre mí</a>
+						<a href="#experienceLink">experiencia</a>
+						<a href="#contactLink">contacto</a>
+					</div>
+				</div>
+				<nav class="navbar navbar-expand-md navbar-dark">
+				  <button class="navbar-toggler buttonMenu" type="button">
+				    <span class="navbar-toggler-icon"></span>
+				  </button>
+				  <div class="collapse navbar-collapse" id="navbarText">
+				    <ul class="navbar-nav">
+				      <li class="nav-item active">
+				        <a class="nav-link" href="#aboutLink">sobre mí <span class="sr-only">(current)</span></a>
+				      </li>
+				      <li class="nav-item">
+				        <a class="nav-link" href="#experienceLink">experiencia</a>
+				      </li>
+				      <li class="nav-item">
+				        <a class="nav-link" href="#contactLink">contacto</a>
+				      </li>
+				    </ul>
+				  </div>
+				</nav>
 			</div>
 		</div>
 		<div id="aboutLink" class="row">
@@ -169,22 +216,19 @@
 					<ul class="studyList">
 						<li><b>Desarrollador web.</b>
 							<ul>
-								<li>Lenguajes de Programación: Java/JavaScript/Php </li>
-								<li>Lenguajes de Marcas: Xml/Html/Css</li>
-								<li>Librerías: Bootstrap/Twig/Scss/Richfaces </li>
-								<li>Bases de datos: Oracle/Mysql </li>
-								<li>Servidor de aplicaciones: Apache/Tomcat/WebLogic Server</li>
-								<li>Framework: Jbosseam/Gwt/</li>
+								<li>Lenguajes: Java / JavaScript / Php / Xml / Html / Css</li>
+								<li>Librerías: Bootstrap / Twig / Scss / Richfaces </li>
+								<li>Bases de datos: Oracle / Mysql </li>
+								<li>Servidor de aplicaciones: Apache / Tomcat / WebLogic Server</li>
+								<li>Framework: Jbosseam / Gwt</li>
 							</ul>
 						</li>
 						<br>
 						<li><b>Técnico en Sistemas Microinformáticos y Redes</b>
 							<ul>
-								<li>Sistemas Operativos: Linux/Windows/Mac OS </li>
-								<li>Controlador de dominio Windows server</li>
-								<li>Servidores: Dns(Bind)/ Web(Apache)</li>
+								<li>Sistemas Operativos: Comandos Linux / CMD</li>
+								<li>Controlador de dominio Windows server / Dns(Bind)/ Web(Apache)</li>
 								<li>Montaje y mantenimiento de equipos informáticos.</li>
-								<li>Conocimiento de comandos Linux.</li>
 							</ul>
 						</li>
 						<br>
@@ -192,7 +236,6 @@
 							<ul>
 								<li>Montaje de cuadros eléctricos.</li>
 								<li>Estructura y distribución de cableado.</li>
-								<li>Medidas de seguridad.</li>
 								<li>Normas sobre instalación segura y legal.</li>
 							</ul>
 						</li>
@@ -207,31 +250,30 @@
 				<div class="text">
 					<ul>
 						<h3>Altia</h3>
-						<li>Desarrollador web.</li>
-						<li>Utilizando:
+						<li><b>Desarrollador web.</b></li>
+						<li>
 							<ul>
-								<li>Weblogic, Tomcat, Mysql, J2EE, GWT, Jbosseam</li>
+								<li>Weblogic / Tomcat / Mysql / J2EE / GWT / Jbosseam</li>
 							</ul>
 						</li>
-						<li>Ver carta de recomentación.</li>
+						<li><i>Ver carta de recomentación.</i></li>
 						<br>
 						<h3>Análisis y Simulación</h3>
-						<li>Técnico de sistemas.</li>
-						<li>Realizando:
+						<li><b>Técnico de sistemas.</b></li>
+						<li>
 							<ul>
 								<li>Mantenimiento de Servidor y datos, Eset, Maquetación, Montaje, Licencias</li>
 							</ul>
 						</li>
-						<li>Ver carta de recomentación.</li>
+						<li><i>Ver carta de recomentación.</i></li>
 						<br>
 						<h3>Electrotécnica Alavesas Aldakin</h3>
-						<li>Técnico electricista.</li>
-						<li>Realizando:
+						<li><b>Técnico electricista.</b></li>
+						<li>
 							<ul>
 								<li>Instalación en vivienda, Almacen, Montaje de cuadros eléctricos</li>
 							</ul>
 						</li>
-						<li>Ver carta de recomentación.</li>
 					</ul>
 					<a class="cvDownload" href="pdf/cvRafaelHernandez.pdf" target="_blank">Descargar Currículum</a>
 				</div>
@@ -249,7 +291,7 @@
 				<div class="text">
 					<h3>No dude en contactar.</h3>
 					<p>Displonible a cualquier horario.</p>
-					<h3>Rafael Hernández</h3>
+					<h3>Rafael Hernández Jiménez</h3>
 					<p>Desarrollador web.</p>
 					<p>daw.rafael.hernandez@gmail.com</p>
 					<p>688664176</p>
@@ -266,38 +308,17 @@
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function(){
-			var lastScrollTop = 0;
-				$(window).scroll(function(event){
-				   var st = $(this).scrollTop();
-				   var divScroll = null
-				   $(".info").each(function() {
-				   		if ($(window).scrollTop() >= $(this)[0].offsetTop &&
-				   			$(window).scrollTop() < $(this)[0].offsetTop + $(this).height()) {
-				   			if (st > lastScrollTop){
-							    if ($(this)[0].scrollHeight - $(this).scrollTop() !== $(this).outerHeight() - 17 ){
-							        window.scrollTo(0, $(this)[0].offsetTop);
-							        $(window).css("overflow", "inherit");
-							        $(".info").css("overflow", "scroll");
-							        console.log("e");
-							    }else{
-							    	$(window).css("overflow", "scroll");
-							    	$(".info").css("overflow", "inherit");
-							    	console.log("u");
-							    }
-						   } else {
-						   		if ($(this)[0].scrollTop !== 0) {
-						   			window.scrollTo(0, $(this)[0].offsetTop);
-						   			$(window).css("overflow", "hidden");
-						   			$(".info").css("overflow", "scroll");
-						   		}else{
-						   			$(window).css("overflow", "scroll");
-						   			$(".info").css("overflow", "hidden");
-						   		}
-						   }
-				   		}
-					});
-				   lastScrollTop = st;
+
+			$(".buttonMenu").click(function(){
+				$(".menu").fadeIn("slow");
+				$(".buttonMenuClose").click(function(){
+					$(".menu").fadeOut("slow");
 				});
+				$(".menu a").click(function(){
+					$(".menu").fadeOut("slow");
+				});
+			});
+
 
 
 
